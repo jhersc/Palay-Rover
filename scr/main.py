@@ -1,3 +1,6 @@
+from collections import deque
+
+recent_ids = deque(maxlen=10)
 import cv2
 from camera.camera import Camera
 from motors.motor import DualMotorController
@@ -22,22 +25,21 @@ try:
         corners, ids, rejected = detector.detectMarkers(gray)
 
         if ids is not None:
-            detected_ids = ids.flatten()
+            if ids is not None:
+                recent_ids.extend(ids.flatten())
 
-            if 0 in detected_ids:
-                print(">> ID 0 detected: STOP ")
+            # decide based on last frames (NOT just current frame)
+            if 0 in recent_ids:
                 motor.stop()
                 motor.turn_right(0.3)
 
-            elif 1 in detected_ids:
-                print(">> ID 1 detected: STOP + LEFT TURN")
+            elif 1 in recent_ids:
                 motor.stop()
                 motor.turn_left(0.3)
-            elif 2 in detected_ids:
-                print(">> ID 2 detected: STOP + RIGHT TURN")
+
+            elif 2 in recent_ids:
                 motor.stop()
                 motor.turn_right(0.3)
-
             cv2.aruco.drawDetectedMarkers(frame, corners, ids)
 
         cv2.imshow("RiceRaker Feed", frame)
