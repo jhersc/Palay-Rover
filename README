@@ -1,3 +1,4 @@
+---
 # Palay Rover (Autonomous Rice Field Rover)
 
 A Raspberry Pi–based autonomous rover using:
@@ -27,3 +28,5 @@ The system uses electrical isolation for safety and reliability.
 ---
 
 ## Project Structure
+
+---
