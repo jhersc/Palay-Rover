@@ -1,4 +1,4 @@
-#  Palay Rover (Autonomous Rice Field Rover)
+# Palay Rover (Autonomous Rice Field Rover)
 
 A Raspberry Pi–based autonomous rover using:
 - Camera vision (OpenCV + Picamera2)
@@ -7,7 +7,7 @@ A Raspberry Pi–based autonomous rover using:
 
 ---
 
-##  Hardware Setup
+## Hardware Setup
 
 ### Raspberry Pi 5 GPIO → Optocoupler → Motor Driver → DC Motors
 
@@ -26,4 +26,4 @@ The system uses electrical isolation for safety and reliability.
 
 ---
 
-##  Project Structure
+## Project Structure
