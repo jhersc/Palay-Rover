@@ -1,0 +1,29 @@
+#  Palay Rover (Autonomous Rice Field Rover)
+
+A Raspberry Pi–based autonomous rover using:
+- Camera vision (OpenCV + Picamera2)
+- ArUco marker control system
+- Dual motor drive system (via GPIO → optocoupler → motor driver)
+
+---
+
+##  Hardware Setup
+
+### Raspberry Pi 5 GPIO → Optocoupler → Motor Driver → DC Motors
+
+The system uses electrical isolation for safety and reliability.
+
+### Suggested Motor Wiring
+
+| Motor | GPIO Pin |
+|------|----------|
+| Left PWM | GPIO 17 |
+| Left DIR | GPIO 27 |
+| Right PWM | GPIO 18 |
+| Right DIR | GPIO 22 |
+
+> NOTE: Motor power must come from external battery (NOT Raspberry Pi)
+
+---
+
+##  Project Structure
