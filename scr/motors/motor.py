@@ -10,7 +10,7 @@ class DualMotorController:
         self.simulation = not os.path.exists("/proc/device-tree/model")
 
         if self.simulation:
-            print("🧪 SIMULATION MODE (Ubuntu - no GPIO)")
+            print("SIMULATION MODE (Ubuntu - no GPIO)")
             return
 
         from gpiozero import PWMOutputDevice, DigitalOutputDevice
