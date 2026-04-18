@@ -12,7 +12,7 @@ aruco_dict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50)
 aruco_params = cv2.aruco.DetectorParameters()
 detector = cv2.aruco.ArucoDetector(aruco_dict, aruco_params)
 
-motor.forward(0.3)
+motor.forward(0.1)
 
 recent_ids = deque(maxlen=10)
 

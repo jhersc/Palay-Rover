@@ -14,7 +14,7 @@ class Camera:
 
             self.cam = Picamera2()
 
-            config = self.cam.create_preview_configuration(
+            config = self.cam.create_video_configuration(
                 main={"size": (640, 480)}
             )
 
